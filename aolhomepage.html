@@ -1,0 +1,179 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="websitestylesheet.css">
+        <style>
+            body{
+                background-color: #6B7074
+            }
+            
+            img{
+                width: 20%;
+               
+            }
+           
+        
+            hr{
+                width: 80%;
+                height: 5px;
+                background-color: black;
+                border-radius: 10%;
+            
+              
+               
+            }
+           
+            
+            
+            
+            body{
+                background-color: #6B7074;
+            }
+            #content{
+                width: 85%;
+                height: 80%;
+                max-width: 50%;
+                max-height: 60%;
+                border-style: outset;
+                border-width: 5px;
+                background-color: #DFDDD2;
+            
+
+            
+                margin-right:auto;
+                margin-left: auto;
+                margin-top: 2%;
+                overflow:hidden;
+            
+
+            }
+            #toolbar{
+                background-color: #73B4E3;
+                background-image: linear-gradient(to bottom, rgba(126,190,236,0.3), #73B4E3,#4A6198 );
+                width: 100%;
+                height: 10%;
+            }
+            #sidepannel{
+                background-image: linear-gradient(to bottom, rgba(54,116,153,0.5), #367499);
+               
+                width: 20%;
+                height: 100%;
+                float:left;
+
+            }
+            #aoltoday{
+                background-color: #FFFFD2;
+                width: 50%;
+                height: 20%;
+         
+              
+
+               
+            }
+            #subheader{
+                background-image: linear-gradient(to right, rgba(54,116,153,0.5), #367499);
+                width: 100%;
+                height: 10%;
+
+            }
+            #innercontent{
+                margin-left: 25%;
+                margin-top: 5%;
+            }
+            #logo{
+                margin-left: 15%;
+                
+                margin-top:20%;
+            }
+            #mailicon{
+                margin-left: 15%;
+                
+                margin-top:20%;
+                width:70%;
+
+            }
+
+
+           
+        
+
+        </style>
+         <script src="jquery.min.js"></script>
+
+    </head>
+    <body>
+        <div id="outercontainer">
+            <div class="navbar">
+                <ul>
+                   
+                    <img src="Apple-Logo.png" style="width:5%; margin-top:0.1%"> 
+                    <li><a href="html"> Website Name </a></li>
+                    <li><a href="html"> About </a></li>
+                    <li><a href="html">Years </a></li>
+                    <li><a href="html">Help </a></li>
+                    <!-- <img id="iconbar" src="iconbar.png" style="width:10%">  -->
+                    
+                </ul>
+            </div>
+            <div id="content">
+                <div id="toolbar">
+
+                </div>
+                <div id="sidepannel"> 
+                    <img id="logo" src="americaonlinelogo.png" style="width:70%">
+                    <img id="mailicon" src="mail.png">
+                    You Have Mail
+
+                </div>
+                <div id="innercontent">
+                    <div id="aoltoday"> 
+                        
+                        <div id="subheader">
+    
+                        </div>
+                        AOL Today <br>
+                        <strong>Looking for Something? </strong> <br>
+                        <a href="https://www.npr.org/templates/story/story.php?storyId=127045793" target="_new">AOL's Journey</a>
+    
+                    </div>
+                    <div id="weather">
+                        Your Weather <br>
+                        79 degrees 
+    
+                    </div>
+                    <div id="news">
+                        Top News Story
+                    </div>
+
+                </div>
+                
+
+           
+           
+     
+          
+                
+    
+               
+                
+    
+            
+              
+                
+          
+            </div>
+
+        </div>
+
+
+
+       </div>
+    </body>
+    <script>
+        $("#mailicon").on("click", function(){
+            window.location.href = "mailbox.html";
+
+
+        });
+
+    </script>
+</html>

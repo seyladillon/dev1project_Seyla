@@ -1,0 +1,187 @@
+<html>
+    <head>
+        <title>
+
+        </title>
+       
+        <script src="jquery.min.js"></script>
+        <script>
+            
+            $(document).ready(function(){
+                $("hr").hide();
+                $("#status").hide();
+                $("#connectbutton").on("click", function(){
+                    connect();
+                    $("#dialupsound").play();
+              
+                
+                })
+
+
+            });
+        </script>
+       
+        <style>
+
+            body{
+                background-color: #F4F4F4;
+             
+            }
+            #stickfigures{
+                justify-content: center;
+                display:flex;
+                margin-bottom: 10%;
+            
+            }
+            img{
+                width: 20%;
+               
+            }
+            #connectbutton{
+                margin-left: 40%;
+                margin-top: 5%;
+                margin-bottom: 5%;
+             
+           
+               
+            }
+            #logo{
+                margin-left: 38%;
+                margin-bottom: 5%;
+             
+            }
+            hr{
+                width: 80%;
+                height: 5px;
+                background-color: black;
+                border-radius: 10%;
+            
+              
+               
+            }
+            #AOLBar{
+                width: 100%;
+            }
+            #dialing{
+                margin-left: 40%;
+                width: 10%;
+            }
+            #outercontainer{
+                width: 70%;
+                background-color: #DFDDD2;
+                border-style: outset;
+                border-width: 5px;
+                margin-right: auto;
+                margin-left: auto;
+               
+          
+            }
+            body{
+                background-color: #6B7074;
+            }
+            #text{
+                color: white;
+                margin-bottom: 2%;
+            }
+           
+            
+
+           
+        </style>
+        
+    </head>
+    <body>
+      
+        <h1> AOL Dial Up in 1990s </h1>
+        <div id="text">
+            AOL started out in 1985 as a software company and eventually became the biggest name on the Web, signing up tens of millions of people for its dial-up Internet connection and popular e-mail service.
+            Comedian Loni Love tries to replicate the screeching sound of a dial-up modem.
+
+            "When we heard that little dial-up sound, that eeeeee, and then you connected, and you then go and you check your mail and you get that 'you got mail,' you were excited," Love says. "I mean, that was the thing."
+
+            Full article: <a href="https://www.npr.org/templates/story/story.php?storyId=127045793">NPR: AOL History</a>
+
+        </div>
+        <audio id="dialupsound" src="dialupsound.mp3"> </audio>
+        
+
+        <div id="outercontainer">
+            <div id="content">
+           
+                <img id= logo src="AOL.png"> 
+    
+     
+          
+                <div id="stickfigures">
+                    <img id="firstbox"src="blankstate.png"> 
+                    <img id="secondbox"src="blankstate.png"> 
+                    <img id="thirdbox"src="blankstate.png"> 
+        
+        
+                </div>
+    
+                <div id="status">
+                    <img id= "dialing" src="Dialing...update.png"> 
+    
+                </div>
+                
+    
+                <hr>
+              
+                
+                <img id ="connectbutton" src="connect.png">
+    
+            </div>
+
+        </div>
+        
+       
+
+    </body>
+    <script>
+         // when connect is pressed, start the animation
+         // connect button changes to "cancel"
+        // progress bar shows up
+        // the stick figure images slowly start to pop up
+        // at the end of the animation, connected! text replaces "dialing" and button goes a
+         function connect(){
+              
+                 $("hr").show();
+                $("#status").show();
+                $("#text").hide();
+                $("h1").hide();
+                
+               
+                var audio = document.getElementById("dialupsound");
+                audio.play();
+                //$("#connectbutton").attr("src", "cancelbutton.png");
+                
+               
+                
+                $("#firstbox").animate({ "backgroundColor": "green"},5000, showStatus1);
+                $("#secondbox").animate({ "backgroundColor": "green"},11000, showStatus2);
+                $("#thirdbox").animate({ "backgroundColor": "green"},25000, showStatus3);
+                $("#status").animate({ "backgroundColor": "green"},25000, showStatus4);
+               
+                
+            }
+
+            function showStatus1(){
+                $("#firstbox").attr("src", "stickfigure1.png");
+
+            }
+            function showStatus2(){
+                $("#secondbox").attr("src", "stickfigure2.png");
+
+            }
+            function showStatus3(){
+                $("#thirdbox").attr("src", "stickfigure3.png");
+
+            }
+            function showStatus4(){
+                $("#dialing").attr("src", "Connected!update.png");
+
+            }
+    </script>
+
+</html>

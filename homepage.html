@@ -1,0 +1,117 @@
+<html>
+    <title>
+
+    </title>
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" href="websitestylesheet.css">
+
+    <head>
+        <style>
+            #background{
+                width:100%;
+                height: 100%;
+            }
+            .navbar{
+                
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+                padding-bottom: 0.1%;
+                background-color: rgba(255,255,255,0.5);
+                
+        
+            }
+            li{
+                display:inline;
+                margin:10px 10px;
+            }
+            li a{
+                color: #000;
+                padding: 5px 5px;
+                margin: 10px 10px;
+                text-decoration: none;
+            }
+            li a:hover{
+                color: #D77F4F;
+            }
+            body{
+                background-image: url("macbackground.jpeg");
+               
+         
+            }
+            #folders{
+                width: 20%;
+                display:flex;
+                flex-direction: column;
+                margin-top: 5%;
+                margin-left: 2%;
+                float:inline-start;
+           
+
+            }
+            .folder{
+                margin: 5px 10px 10px 5px;
+              
+            
+            }
+            .folder:hover{
+                opacity: 0.5;
+            }
+            #iconbar{
+                float:right;
+         
+            }
+            #popup{
+                margin-right: 50%;
+         
+                
+            }
+            
+            
+        </style>
+
+
+    <script src="jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+               
+                <img src="Apple-Logo.png" style="width:5%; margin-top:0.1%"> 
+                <li><a href="html"> Website Name </a></li>
+                <li><a href="html"> About </a></li>
+                <li><a href="html">Years </a></li>
+                <li><a href="html">Help </a></li>
+                <!-- <img id="iconbar" src="iconbar.png" style="width:10%">  -->
+                
+            </ul>
+        </div>
+        <div id="folders">
+            <img class="folder" id="1990" src="1990.png" style="width:30%">
+            <img class= "folder" id="2007" src="2007.png"  style="width:30%">
+            <img class = "folder" id="2014" src="2014.png"  style="width:30%">
+            <img class = "folder" id="2022" src="2022.png"  style="width:30%">
+        </div>
+      
+        <img id="popup" src="popup.png"  style="width:30%">
+       
+        
+
+        
+
+    </body>
+    <script>
+         $("#1990").on("click", function(){
+            window.location.href = "dialup.html";
+         });
+         $("#2007").on("click", function(){
+            window.location.href = "2007.html";
+         });
+         $("#2014").on("click", function(){
+            window.location.href = "2014.html";
+         });
+         $("#2022").on("click", function(){
+            window.location.href = "2022.html";
+         });
+
+    </script>
+</html>
