@@ -5,6 +5,9 @@
         <style>
              body {
         text-align: center;
+        font-family: 'Inconsolata', monospace;
+
+        
     }
      
     h2 {
@@ -13,10 +16,11 @@
      
     .gallery {
         margin: 10px 40px;
+        
     }
      
     .gallery img {
-        width: 350px;
+        width: 550px;
         height: 300px;
         transition: 1s;
         padding: 5px;
@@ -31,9 +35,76 @@
         font-family: Arial, Helvetica, sans-serif;
         padding: 10px; 
     }
-    .background1{
-      background-image: url("polaroid.png");
+    .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+    margin: 5px;
+    background-color: #B9D9EB;
+  }
+  .media {
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.layer {
+  opacity: 0;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 90%;
+  background: #FFF;
+  color: #151E3F;
+  transition: all 0.9s ease;
+  
+}
+
+p {
+  font-family: 'Inconsolata', monospace;
+  text-align: center;
+  font-size: 15px;
+  letter-spacing:1px;
+}
+
+.media:hover .layer {
+  opacity: 0.8;
+  width: 90%;
+  transition: all 0.5s ease;
+ 
+}
+
+@media (max-width: 800px){
+  body {
+    transform: scale(0.6);
+  }
+}
+
+@media (max-width: 600px) {
+    .wrapper {
+    display: block;
+      margin: 10px;
     }
+  }
+  img {
+      max-width: 100%;
+      height: auto;
+    }
+    #words{
+        text-align: center;
+        margin: 50px; 
+        font-size:xx-small; 
+    }
+   
+
+    
         </style>
 
 <script src="jquery-3.6.1.mincopy.js"></script>
@@ -48,15 +119,65 @@
     <div id="title">
         <h1>SOCIAL MEDIA</h1>
     </div>
+
+    <div id="words">
+        <p>social media presense has changed and revolutionized over the years. this page expresses art to depict the changes
+            and transformations from 1997 to 2010 while revealing social media harms. what are the cracks and downfalls of social media and technological advancements? 
+    </p>
+
+
+
+    
+    <div class="wrapper">
+        <div class="media">
+        <div class="layer">
+            <p>six degrees,1997</p>
+          </div>
+        <img src="Six degrees.png" alt="" />
+        </div>
+         <div class="media">
+        <div class="layer">
+            <p>friendster,2002</p>
+          </div>
+        <img src="Friendster.png" alt="" />
+        </div>
+           <div class="media">
+        <div class="layer">
+            <p>myspace,2003</p>
+          </div>
+        <img src="Myspace.png" alt="" />
+        </div>
+        <div class="media">
+            <div class="layer">
+                <p>facebook,2004</p>
+              </div>
+            <img src="facebook.png" alt="" />
+            </div>
+            <div class="media">
+                <div class="layer">
+                    <p>twitter,2006</p>
+                  </div>
+                <img src="Twitter.png" alt="" />
+                </div>
+                <div class="media">
+                    <div class="layer">
+                        <p>instagram,2010</p>
+                      </div>
+                    <img src="insta.png" alt="" />
+                    </div>
+    </div>
+
+
         <div class="gallery">
     
-            <a class="background1" href= "Six degrees.png">
-                <img src=  "Six degrees.png">  </a>
-            <a class="background" href= "Friendster.png">
-                <img src="Friendster.png">      </a>
-            <a href="facebook.png">   <img src=  "facebook.png"></a>
-            <a href="Twitter.png"><img src="Twitter.png">   </a>
-        <a href="insta.png"><img src="insta.png">   </a>
+            <a class="background1" href= "socialmedia1.png">
+                <img src=  "socialmedia1.png">  </a>
+            <a class="background" href= "socialmedia2.png">
+                <img src="socialmedia2.png">      </a>
+            <a href="socialmedia3.png">   <img src=  "socialmedia3.png"></a>
+            <a href="socialmedia4.png"><img src="socialmedia4.png">   </a>
+        <a href="socialmedia5.png"><img src="socialmedia5.png">   </a>
+        <a href="socialmedia6.png"><img src="socialmedia6.png">   </a>
         <!-- <a href=
 "https://media.geeksforgeeks.org/wp-content/uploads/20200318142309/php7.png">
             <img src=
@@ -64,13 +185,6 @@
         </a> -->
     </div>
 
-    <div id="words">
-        <p>social media presense has changed and revolutionized over the years. this gallery of art depicts the changes
-            and trasformations from social media from 1997 all the way to present times. 
-       <p></p> 
-       but what about the cracks and downfalls of social media and technological advancements? 
-    </p>
-    
 
     </div>
     </body>
