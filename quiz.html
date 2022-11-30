@@ -1,0 +1,745 @@
+<html><head>
+    <title>
+        Quiz
+    </title>
+    <link rel="stylesheet" href="../Style.css">
+    <style>
+        a{
+            color: #000000;
+        }
+        h1 {
+            font-size: 32pt;
+            line-height: unset;
+        }
+
+        div {
+            /* border: 1px solid red; */
+        }
+
+        html {
+            font-family: 'Open Sans';
+        }
+
+        body {
+            padding: 0px;
+            margin: 0px;
+            overscroll-behavior: none;
+        }
+
+        hr {
+            height: 20px;
+            background-color: #000000;
+            border-radius: 10px;
+            border: none;
+        }
+
+        #container {
+
+            display: flex;
+            flex-flow: row nowrap;
+            width: 100%;
+            height: 100%;
+        }
+
+        #quizSide {
+            display: flex;
+            width: 50%;
+            flex-grow: 1;
+            flex-flow: column nowrap;
+            align-items: center;
+            justify-content: space-around;
+            background-image: url("Background Image 1.png");
+            background-repeat: no-repeat;
+        }
+
+        #quizCaption {
+            text-align: center;
+            width: fit-content;
+            color: white;
+            padding-right: 50px;
+            padding-left: 50px;
+        }
+
+        #quizContent {
+            background-color: white;
+            border-radius: 75px;
+            width: 80%;
+            height: 40%;
+            display: flex;
+            flex-flow: row nowrap;
+        }
+
+        #quizCaption h1 {
+            font-size: 60px;
+            font-weight: bold;
+            margin: 0px;
+        }
+
+        #quizCaption h2 {
+            font-size: 30px;
+            font-weight: bold;
+            margin: 0px;
+        }
+
+        #answer1 {
+            border-top-left-radius: 75px;
+            border-bottom-left-radius: 75px;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        #answer2 {
+            border-left: 15px solid #000000;
+            border-right: 15px solid #000000;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        #answer3 {
+            border-top-right-radius: 75px;
+            border-bottom-right-radius: 75px;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .answer {
+            flex-grow: 1;
+            text-align: center;
+            width: 33%;
+            color: rgb(0, 0, 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-flow: column nowrap;
+        }
+
+        .icon {
+            height: 80%;
+            width: 80%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            border-radius: 75px;
+            position: relative;
+        }
+
+        #quizNav {
+            display: flex;
+            width: 60%;
+            flex-flow: row nowrap;
+            height: 10%;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        .option {
+            position: relative;
+            height: fit-content;
+            padding: 10px;
+        }
+
+        .option h1 {
+            margin: 0;
+        }
+
+        .quizNav {
+            background-image: url("nav.png");
+            width: 25px;
+            height: 25px;
+            background-size: cover;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .outerCircle {
+            border: 10px solid white;
+            border-radius: 50px;
+            height: 75px;
+            flex: 0 0 75px;
+            display: none;
+        }
+
+        .footer {
+            margin: 0px;
+            padding-bottom: 2px;
+            height: 60px;
+            position: absolute;
+            bottom: 0px;
+        }
+
+        #factSide {
+            height: 100%;
+            width: 50%;
+            flex-grow: 1;
+            color: rgb(0, 0, 0);
+        }
+
+        #factCount {
+            font-size: 40px;
+            text-align: center;
+            width: 50%;
+            margin: 25% auto 5%;
+        }
+
+        #factCount p {
+            margin: 0px;
+        }
+
+        #factDisplay {
+            font-size: 60px;
+            text-align: center;
+            width: 75%;
+            margin: auto;
+        }
+
+        #factDisplay p {
+            margin: 0px;
+        }
+
+        #buy1 {
+            border-bottom-left-radius: 100px;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        #buy2 {
+            border-radius: 15px;
+        }
+
+        #buy3 {
+            border-bottom-right-radius: 100px;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .buy {
+            border: 5pt solid rgb(0, 0, 0);
+            height: fit-content;
+            border-radius: 25px;
+            width: 150px;
+            position: relative;
+            bottom: -40px;
+            display: none;
+        }
+
+        .buy:hover {
+            opacity: 0.5;
+        }
+
+        .header {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgb(0, 0, 0);
+            padding: 0.25px;
+            transition: 0.3s;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            align-items: center;
+            z-index: 99;
+            transition: 0.5s;
+        }
+
+        .hamburger {
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            top: 50px;
+            right: 10%;
+            background: #000000;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 4;
+            transition: 0.3s;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            right: 0;
+            background: #000000;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .hamburger::before {
+            top: -10px;
+            width: 45px;
+
+        }
+
+        .hamburger::after {
+            top: -10px;
+            width: 45px;
+
+        }
+
+        .togggle-menu {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            top: 30px;
+            right: 10%;
+            z-index: 5;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .hamburger,
+        .togggle-menu {
+            display: none;
+        }
+
+        .navigation input:checked~.hamburger {
+            background: transparent;
+        }
+
+        .navigation input:checked~.hamburger:before {
+            top: 0;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+
+        .navigation input:checked~.hamburger:after {
+            top: 0;
+            transform: rotate(45deg);
+            width: 30px;
+        }
+
+        .navigation input:checked~.menu {
+            right: 0;
+
+        }
+
+        @media screen and (max-width:3600px) {
+
+            .hamburger,
+            .togggle-menu {
+                display: block;
+            }
+
+        }
+
+        /*hamburger css end here*/
+
+        @media only screen and (max-width: 675px) {
+            h1{
+                font-size: 12pt;
+            }
+            #quizCaption h1{
+                font-size: 25pt;
+            }
+            #quizCaption h2{
+                font-size: 15pt;
+            }
+            p{
+                font-size: 5pt;
+            }
+            #container {
+                flex-direction: column-reverse;
+            }
+            #quizSide{
+                width: 100%;
+                height: 80vw;
+            }
+            #factSide{
+                width: 100%;
+                height: 10vw;
+            }
+            #factCount{
+                font-size: 10pt;
+            }
+            #factCount p{
+                font-size: 15pt;
+            }
+            #factCount h1{
+                font-size: 15pt;
+            }
+            #factDisplay p{
+                font-size: 10pt;
+            }
+            #factDisplay h1{
+                margin: 0;
+                font-size: 10pt;
+            }
+            .third{
+                color: #CFB1BD;
+            }
+            .buy{
+                bottom: -15px;
+                width: 80px;
+            }
+            .buy p{
+                font-size: 10pt;
+            }
+            .outerCircle{
+                height: 50px;
+                border-radius: 50px;
+                flex: 0 0 50px;
+            }
+            .footer div{
+                color: white;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!--hamburger start here-->
+    <div class="nav" style="z-index: 3;">
+        <div class="third" style="text-align: left">
+            <h3>Placeholder</h3>
+        </div>
+    <!--close of nav bar-->
+    <!--hamburger close here-->
+
+    <div id="container">
+        <div id="quizSide">
+            <div id="quizCaption"><h1>NFT Type</h1> <h2>What kind of NFT do you want? </h2></div>
+            <div id="quizContent">
+                <div id="answer1" class="answer">
+                    <div id="option1" class="option" style="opacity: 1; top: 0px;"><h1> Meme</h1></div>
+                    <div id="icon1" class="icon" style="background-image: url(&quot;Pillow_Weight/feather.svg&quot;); opacity: 1; top: 0px;"></div>
+                    <a href="shop.html" target="_new"><div id="buy1" class="buy"></div></a>
+                </div>
+                <div id="answer2" class="answer">
+                    <div id="option2" class="option" style="opacity: 1; top: 0px;"><h1> Famous</h1></div>
+                    <div id="icon2" class="icon" style="background-image: url(&quot;Pillow_Weight/scale.svg&quot;); opacity: 1; top: 0px;"></div>
+                    <a href="shop.html" target="_new"><div id="buy2" class="buy"></div></a>
+                </div>
+                <div id="answer3" class="answer">
+                    <div id="option3" class="option" style="opacity: 1; top: 0px;"><h1>Whatever </h1></div>
+                    <div id="icon3" class="icon" style="background-image: url(&quot;Pillow_Weight/heavy.svg&quot;); opacity: 1; top: 0px;"></div>
+                    <a href="shop.html" target="_new"><div id="buy3" class="buy"></div></a>
+                </div>
+            </div>
+            <div id="quizNav">
+                <div id="nav1" class="quizNav">
+                    <div class="outerCircle" style="display: block;"></div>
+                </div>
+                <div id="nav2" class="quizNav">
+                    <div class="outerCircle" style="display: none;"></div>
+                </div>
+                <div id="nav3" class="quizNav">
+                    <div class="outerCircle" style="display: none;"></div>
+                </div>
+                <div id="nav4" class="quizNav">
+                    <div class="outerCircle" style="display: none;"></div>
+                </div>
+                <div id="nav5" class="quizNav">
+                    <div class="outerCircle" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="factSide">
+            <div id="factCount"><p> NFT Fact <strong>18</strong></p></div>
+            <div id="factDisplay"><p>NFTs are cool. </p></div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="third" style="text-align: left;">
+            <h4>Placeholder</h4>
+        </div>
+        
+    </div>
+
+<script src="jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        var questions = [
+            {
+                "title": "NFT Type",
+                "caption": "What kind of NFT do you want? ",
+                "q1Title": "Good",
+                "1score":
+                {
+                    "p1": "2",
+                    "p2": "-3",
+                    "p3": "-1"
+                },
+                "q1Icon": "url('Pillow_Weight/feather.svg')",
+                "q2Title": "Whatever",
+                "2score":
+                {
+                    "p1": "-1",
+                    "p2": "1",
+                    "p3": "2"
+                },
+                "q2Icon": "url('Pillow_Weight/scale.svg')",
+                "q3Title": "Meme",
+                "3score":
+                {
+                    "p1": "-3",
+                    "p2": "3",
+                    "p3": "1"
+                },
+                "q3Icon": "url('Pillow_Weight/heavy.svg')"
+
+            },
+            {
+                "title": "NFT Price ",
+                "caption": "What price range is for you?",
+                "q1Title": "Tutition",
+                "1score":
+                {
+                    "p1": "3",
+                    "p2": "-2",
+                    "p3": "2"
+                },
+                "q1Icon": "url('expensive.png')",
+                "q2Title": "Neutral",
+                "2score":
+                {
+                    "p1": "-2",
+                    "p2": "1",
+                    "p3": "3"
+                },
+                "q2Icon": "url('neutral.png')",
+                "q3Title": "Cheap",
+                "3score":
+                {
+                    "p1": "-2",
+                    "p2": "2",
+                    "p3": "-1"
+                },
+                "q3Icon": "url('cheap.png')"
+            },
+            {
+                "title": "NFT Artist",
+                "caption": "Who made your NFT?",
+                "q1Title": "Artist",
+                "1score":
+                {
+                    "p1": "2",
+                    "p2": "-1",
+                    "p3": "1"
+                },
+                "q1Icon": "url('Sleeping_Temperature/cool.svg')",
+                "q2Title": "Yourself",
+                "2score":
+                {
+                    "p1": "1",
+                    "p2": "-1",
+                    "p3": "2"
+                },
+                "q2Icon": "url('Sleeping_Temperature/ambient.svg')",
+                "q3Title": "Kid",
+                "3score":
+                {
+                    "p1": "-2",
+                    "p2": "3",
+                    "p3": "1"
+                },
+                "q3Icon": "url('Sleeping_Temperature/warm.svg')"
+            },
+            {
+                "title": "NFT Seller",
+                "caption": "Where is the NFT being sold?",
+                "q1Title": "Reddit",
+                "1score":
+                {
+                    "p1": "-2",
+                    "p2": "3",
+                    "p3": "2"
+                },
+                "q1Icon": "url('Sleeping_Position/back.svg')",
+                "q2Title": "Stranger",
+                "2score":
+                {
+                    "p1": "-3",
+                    "p2": "3",
+                    "p3": "2"
+                },
+                "q2Icon": "url('Sleeping_Position/side.svg')",
+                "q3Title": "Opensea",
+                "3score":
+                {
+                    "p1": "3",
+                    "p2": "-3",
+                    "p3": "3"
+                },
+                "q3Icon": "url('Sleeping_Position/front.svg')"
+            },
+            {
+                "title": "NFT Commitment",
+                "caption": "How long did it take to make?",
+                "q1Title": "Seconds",
+                "1score":
+                {
+                    "p1": "2",
+                    "p2": "2",
+                    "p3": "2"
+                },
+                "q1Icon": "url('Sleeping_Partners/single.svg')",
+                "q2Title": "Weeks",
+                "2score":
+                {
+                    "p1": "-2",
+                    "p2": "0",
+                    "p3": "3"
+                },
+                "q2Icon": "url('Sleeping_Partners/partner.svg')",
+                "q3Title": "Hours",
+                "3score":
+                {
+                    "p1": "2",
+                    "p2": "2",
+                    "p3": "2"
+                },
+                "q3Icon": "url('Sleeping_Partners/pets.svg')"
+            }
+        ]
+        var techFact = ["NFTs are Unique ",
+            "Smart Contracts mean anything digital can become an NFT",
+            "Most NFTs exist on Ethereum",
+            "Investing in NFTs is a lucrative opportunity",
+            "NFTs are most likely here to stay",
+            "Meme NFTs are worth a ALOT",
+            "Please, just don't buy an NFT - Edward ",
+            "NFTs are not exactly like Cryptocurrencies but more special",
+            "NFTs have been sold for nearly 70 million dollars",
+            "NFTs are more affordable than you think",
+            "NFTs are popular with Gamers and in the Video game industry",
+            "You can buy virtual land.. Travel to Decentraland",
+            "NFTs are being monetized by celebs",
+            "NFTs are not Tax-Free... just so you know :)",
+            "NFT are apparently harmful to the environment",
+            "NFTs are helping international artists sell their work, pay rent and buy food",
+            "An animated flying rainbow cat with a poptart body meme sould for $600k",
+            "Minting NFTs is free at Opensea.io",
+            "Why buy an NFT when you can buy stocks? ",
+            "I don't even know how to buy an NFT - Edward",
+            "NFT truly hit the mainstream in 2017... oops",
+            "NFTs started with CryptoKitties and CriptoPunks",
+            "An NFT can't be forged. ",
+            "Listing NFTs entails minting",
+            "Ethereum supports the majority of NFTs",
+            "The NFT market increased by 18,000% in a year.",
+            "Meme NFTs are valuable",
+            "Ethereum 2.0 will almost certainly fix the problem of excessive gas prices",
+            "Millenials LOVE NFTs",
+            "Pretty much anything can become an NFT"];
+        var questionNumber = 0;
+        var scores = [0, 0, 0];
+        var selection = [];
+        // document.querySelector("#icon1").style.backgroundImage = questions[0]["q1Icon"];
+        var pageLoad = function (pageNum) {
+            var fact = Math.floor(Math.random() * (techFact.length));
+            $("#factCount").html("<p>NFT Fact <strong>" + fact + "</strong></p>");
+            $("#factDisplay").html("<p>" + techFact[fact] + "</p>");
+            $(".outerCircle").css("display", "none");
+            document.querySelector("#quizCaption").innerHTML = "<h1>" + questions[pageNum].title + "</h1> <h2>" + questions[pageNum].caption + "</h2>";
+            nav = "#nav" + (parseFloat(pageNum) + 1);
+            $(nav).children().toggle();
+            for (var i = 1; i <= 3; i++) {
+                answer = "#answer" + i;
+                option = "#option" + i;
+                icon = "#icon" + i;
+                $(option).html("<h1>" + questions[pageNum]["q" + i + "Title"] + "</h1>");
+                $(icon).css("backgroundImage", questions[pageNum]["q" + i + "Icon"]);
+
+            }
+        }
+        var weights = function (questionNum, choice) {
+            for (var i = 0; i < 3; i++) {
+                scores[i] += parseFloat(questions[questionNum][choice]["p" + (i + 1)]);
+            }
+        }
+        var product = function (soft, hard, moldable) {
+            var rank = [soft, hard, moldable];
+            var rank2 = [soft, hard, moldable];
+            var name = ["Fake NFT", " Real NFT", "Ok NFT "];
+            rank.sort((a, b) => b - a);
+            document.querySelector("#quizCaption").innerHTML = "<h1>Your NFT Formation</h1><h2>personalized NFT that has been minted from the blockchain! you'll thank us for not getting scam <3 </h2>";
+            $(".outerCircle").css("display", "none");
+            $(".icon").toggle();
+            $(".buy").toggle();
+            for (var i = 0; i < 3; i++) {
+                for (var a = 0; a < 3; a++) {
+                    if (rank[i] == rank2[a]) {
+                        document.querySelector("#option" + (i + 1)).innerHTML = "<h1>" + name[a] + "</h1>" + "<h2>" + rank[i] + "</h2>";
+                        if (i == 0) {
+                            $("#factDisplay").html("<p> With the <strong>" + name[a] + "</strong> and favorable number of: <h1 style='font-size: 70;'><strong>" + rank[i] + "</strong></h1></p>");
+                        }
+                    }
+                }
+                document.querySelector("#buy" + (i + 1)).innerHTML = "<p>add</p>";
+            };
+            $("#factCount").html("Your Winning Big");
+            console.log(name);
+            console.log(rank);
+        }
+        pageLoad(questionNumber);
+        $(".answer").on("mouseover", function () {
+            if (questionNumber < 5) {
+                $(this).children(".option").css("opacity", "0.5").css("top", "5");
+                $(this).children(".icon").css("opacity", "0.5").css("top", "5");
+            }
+        })
+        $(".answer").on("mouseout", function () {
+            $(this).children(".option").css("opacity", "1").css("top", "0");
+            $(this).children(".icon").css("opacity", "1").css("top", "0");
+            if (questionNumber < 5) {
+                $(this).children(".icon").css("opacity", "1").css("top", "0");
+            }
+        })
+        $(".answer").on("click", function () {
+            if (questionNumber < 5) {
+                //console.log($(this).context.innerText);
+                if ($(this).attr("id") == "answer1") {
+                    selection[questionNumber] = "1score";
+                } else if ($(this).attr("id") == "answer2") {
+                    selection[questionNumber] = "2score";
+                } else if ($(this).attr("id") == "answer3") {
+                    selection[questionNumber] = "3score";
+                }
+                console.log(selection);
+                questionNumber++;
+                console.log(questionNumber);
+                if (questionNumber < 5) {
+                    pageLoad(questionNumber);
+                }
+                if (questionNumber == 5) {
+                    for (var i = 0; i < 5; i++) {
+                        weights(i, selection[i]);
+                    }
+                    console.log(scores);
+                    product(scores[0], scores[1], scores[2]);
+                    scores = [0, 0, 0];
+                }
+            }
+        })
+        $(".quizNav").on("click", function () {
+            if (questionNumber == 5) {
+                $(".icon").toggle();
+                $(".buy").toggle();
+                $(".option").css("border-bottom", "5pt solid rgb(207, 177, 189)")
+                $(".icon").css("opacity", "1").css("top", "0");
+            }
+            var pos = $(this).attr("id");
+            pos = parseFloat(pos.charAt(pos.length - 1)) - 1;
+            if (pos < questionNumber) {
+                questionNumber = pos;
+                pageLoad(questionNumber);
+            }
+        })
+        $(".buy").on("click", function () {
+            localStorage.setItem("quizresult", "'" + $(this).parent().children(".option")[0].firstChild.innerHTML + "'");
+            console.log(localStorage.getItem("quizresult"));
+        })
+    })
+</script>
+
+</body></html>

@@ -1,0 +1,330 @@
+<html><head>
+    <title>Shopping Cart - Atmosleep</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- Importing Open Sans, an open source Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <script src="http://iyawebdev.com/jquery.js"></script>
+    <link rel="stylesheet" href="../Style.css">
+    <style>
+        body {
+            background-image: url(Background\ Image\ 1.png);
+        }
+        table {
+            margin: auto;
+            margin-top: 30px;
+            margin-bottom: 100px;
+        }
+        #confirmation {
+            text-align: center;
+            color: #fff;
+        }
+
+        /*hamburger css start here*/
+        .header{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: purple;
+            padding: 0.25px;
+            transition: 0.3s;
+        }
+        .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        }
+        .hamburger{
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            top: 50px;
+            right: 10%;
+            background: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 4;
+            transition: 0.3s;
+        }
+        .hamburger::before,
+        .hamburger::after{
+            content: "";
+            position: absolute;
+            height: 4px;
+            right: 0;
+            background: #fff;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+        .hamburger::before{
+            top:-10px;
+            width: 45px;
+
+        }
+        .hamburger::after{
+            top:-10px;
+            width: 45px;
+
+        }
+
+        .togggle-menu{
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            top: 30px;
+            right: 10%;
+            z-index: 5;
+            cursor: pointer;
+            opacity: 0;
+        }
+        .hamburger,
+        .togggle-menu{
+        display: none;
+        }
+        .navigation input:checked ~.hamburger{
+            background: transparent;
+        }
+        .navigation input:checked ~.hamburger:before{
+            top:0;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+        .navigation input:checked ~.hamburger:after{
+        top: 0;
+        transform: rotate(45deg);
+        width: 30px;
+        }
+        .navigation input:checked~ .menu{
+            right: 0;
+            
+        }
+        @media screen and (max-width:3600px) {
+        .hamburger,
+        .togggle-menu{
+        display: block;
+        }
+        
+        }
+        /*hamburger css end here*/
+    </style>
+</head>
+
+<body>
+    <!--hamburger start here-->
+    <div class="nav" style="z-index: 99;">
+        <div class="third" style="text-align: left">
+            <h3>Placeholder</h3>
+        </div>
+
+    <!--hamburger close here-->
+
+    <div id="orderform">
+        <form name="orderform">
+            <table border="0" cellpadding="9" bordercolor="#FFFFFF">
+                <tbody><tr>
+                    <td align="center" colspan="2"><font color="#FFFFFF"><b>Shopping Cart</b></font></td>
+                </tr>
+                <tr>
+                    <td align="center"><font color="#FFFFFF"><i><b>Items</b></i></font></td>
+                    <td align="center"><font color="#FFFFFF"><i><b>Qty</b></i></font></td>
+                </tr>
+                <tr> 
+                    <td><hr></td>
+                    <td><hr></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF"> Real NFT ($6000.00)</font></td>
+                    <td align="center">
+                        <input type="text" name="fnumb" id="fnumb" size="4" value="0"> 
+                        <input type="button" value="-" class="decreasebutton" id="fdecrease">
+                        <input type="button" value="+" class="increasebutton" id="fincrease">
+                    </td>
+                </tr>
+                <tr> 
+                    <td><font color="#FFFFFF"><nobr> Fake NFT ($6000.00)</nobr></font></td>
+                    <td align="center">
+                        <input type="text" name="lnumb" id="lnumb" size="4" value="0">
+                        <input type="button" value="-" class="decreasebutton" id="ldecrease">
+                        <input type="button" value="+" class="increasebutton" id="lincrease">
+                    </td>
+                </tr>
+                <tr> 
+                    <td><font color="#FFFFFF"> Ok NFT ($6000.00)</font></td>
+                    <td align="center">
+                        <input type="text" name="mnumb" id="mnumb" size="4" value="0">
+                        <input type="button" value="-" class="decreasebutton" id="mdecrease">
+                        <input type="button" value="+" class="increasebutton" id="mincrease">
+                    </td>
+                </tr>
+                <tr>
+                        <td colspan="2" align="center"><hr><input type="button" value="Calculate"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF"><i>Sub-total</i></font></td>
+                    <td><input type="text" name="subt" id="subt" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF"><i>Tax</i></font></td>
+                    <td><input type="text" name="tax" id="tax" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF"><i>Total</i></font></td>
+                    <td><input type="text" name="total" id="total" size="15"></td>
+                </tr>
+            </tbody></table>
+            <table border="0" cellpadding="9" bordercolor="#FFFFFF">
+                <tbody><tr>
+                    <td align="center" colspan="2"><font color="#FFFFFF"><b>Shipping Information</b></font></td>
+                </tr>
+                <tr> 
+                    <td colspan="2"><hr></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">First Name</font></td>
+                    <td><input type="text" name="fname" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">Last Name</font></td>
+                    <td><input type="text" name="lname" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">Phone Number</font></td>
+                    <td><input type="text" id="pnum" name="pnum" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">Email</font></td>
+                    <td><input type="text" id="email" name="email" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">Street Address</font></td>
+                    <td><input type="text" name="address" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">City</font></td>
+                    <td><input type="text" name="city" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">State</font></td>
+                    <td><input type="text" name="state" size="15"></td>
+                </tr>
+                <tr>
+                    <td><font color="#FFFFFF">Zip Code</font></td>
+                    <td><input type="text" name="zip" size="15"></td>
+                </tr>
+                <tr>
+                        <td colspan="2" align="center"><hr><input type="button" value="Order Now"></td>
+                </tr>
+            </tbody></table>
+            <div id="confirmation"></div>
+        </form>
+        <div class="footer">
+            <div class="third" style="text-align: left">
+                <h4>Placeholder</h4>
+            </div>
+            <div class="third" style="text-align: right; float: right;">
+                <p>Copyright © 2021-2022 Placeholder. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Uses cookies to take the quiz results
+        if(localStorage.getItem("quizresult") == "Real NFT"){
+            document.querySelector("#fnumb").value = 1;
+        } else if(localStorage.getItem("quizresult") == "Fake NFT"){
+            document.querySelector("#lnumb").value = 1;
+        } else if(localStorage.getItem("quizresult") == "Ok NFT"){
+            document.querySelector("#mnumb").value = 1;
+        }
+
+        var increase = function(temp){
+            x = parseFloat(temp.val());
+            x++;
+            temp.val(x);
+        }
+        var decrease = function(temp){
+            x = parseFloat(temp.val());
+            x--;
+            if (x >= 0){
+                temp.val(x);
+            }
+        }
+        var subtotal = function(){
+            total = 0;
+            total += 6000.00 * parseFloat(document.querySelector("#fnumb").value);
+            total += 6000.00 * parseFloat(document.querySelector("#lnumb").value);
+            total += 6000.00 * parseFloat(document.querySelector("#mnumb").value);
+
+            document.querySelector("#subt").value = total;
+        }
+
+        var tax = function(){
+            RATE = 0.095;
+            document.querySelector("#tax").value = parseFloat(document.querySelector("#subt").value) * RATE;
+        }
+
+        var totalcost = function(){
+            document.querySelector("#total").value = parseFloat(document.querySelector("#subt").value) + parseFloat(document.querySelector("#tax").value);
+        }
+
+        document.querySelector("input[value='Calculate']").addEventListener("click", function(){
+            subtotal();
+            tax();
+            totalcost();
+        })
+
+        var check = function(){
+            phonenum = document.querySelector("#pnum").value;
+            phonenum = phonenum.replace(/[()-]/g, "");
+
+            email = document.querySelector("#email").value;
+
+            valid = true;
+
+            // phone number validation test
+            if(phonenum.length != 10){
+                alert("Please enter a valid phone number with an area code");
+                valid = false;
+            } else {
+                document.querySelector("#pnum").value = "(" + phonenum.substring(0,3) + ") " + phonenum.substring(3,6) + "-" + phonenum.substring(6, 10);
+            }
+
+            // email validation test
+            if(email.indexOf("@") == -1){
+                alert("Please enter a valid email address");
+                valid = false;
+            } else if(email.indexOf(".") == -1){
+                alert("Please enter a valid email address");
+                valid = false;
+            } else if(email.indexOf(".") < email.indexOf("@")){
+                alert("Please enter a valid email address");
+                valid = false;
+            }
+
+            if(valid){
+                document.querySelector("#confirmation").innerHTML = "Thank you for purchasing from Placeholder! You should receive a confirmation email shortly.";
+            }
+        }
+
+        document.querySelector("input[value='Order Now']").addEventListener("click", function(){
+            check();    
+        })
+
+
+        $(document).ready(function(){
+            $(".increasebutton").on("click", function(){
+                increase($(this).prev().prev());
+            })
+            $(".decreasebutton").on("click", function(){
+                decrease($(this).prev());
+            })
+        })
+    </script>
+
+</body></html>
