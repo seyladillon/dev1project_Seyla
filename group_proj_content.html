@@ -6,102 +6,162 @@
              body {
         text-align: center;
         font-family: 'Inconsolata', monospace;
-
-        
-    }
-     
-    h2 {
-        color: green;
-    }
-     
-    .gallery {
-        margin: 10px 40px;
-        
-    }
-     
-    .gallery img {
-        width: 550px;
-        height: 300px;
-        transition: 1s;
-        padding: 5px;
-    }
-     
-    .gallery img:hover {
-        filter: drop-shadow(4px 4px 6px gray);
-        transform: scale(1.1);
     }
     
-    #title{
-        font-family: Arial, Helvetica, sans-serif;
-        padding: 10px; 
+    .navbar{
+                
+                font-size: 16px;
+                font-family: Arial, Helvetica, sans-serif;
+                padding-bottom: 0.1%;
+                background-color: rgba(255,255,255,0.5);
+                
+            
+            }
+            li{
+                display:inline;
+                margin:10px 10px;
+            }
+            li a{
+                color: #000;
+                padding: 5px 5px;
+                margin: 10px 10px;
+                text-decoration: none;
+            }
+            li a:hover{
+                color: #D77F4F;
+            }
+            #title{
+            font-family: 'Inconsolata', monospace;
+            
+            }
+            #sidecolumn {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        
     }
-    .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    margin: 5px;
-    background-color: #B9D9EB;
-  }
-  .media {
-  width: 300px;
-  height: 200px;
-  overflow: hidden;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
 
-.layer {
-  opacity: 0;
-  position: absolute;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 10px;
-  height: 90%;
-  background: #FFF;
-  color: #151E3F;
-  transition: all 0.9s ease;
-  
-}
-
-p {
-  font-family: 'Inconsolata', monospace;
-  text-align: center;
-  font-size: 15px;
-  letter-spacing:1px;
-}
-
-.media:hover .layer {
-  opacity: 0.8;
-  width: 90%;
-  transition: all 0.5s ease;
- 
-}
-
-@media (max-width: 800px){
-  body {
-    transform: scale(0.6);
-  }
-}
-
-@media (max-width: 600px) {
-    .wrapper {
-    display: block;
-      margin: 10px;
+    #thumbimg {
+        margin-right: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
     }
-  }
-  img {
-      max-width: 100%;
-      height: auto;
+
+    .thumb {
+        width: 90px;
+        /* margin-top: 5px;
+        margin-bottom: 5px; */
+        cursor: pointer;
+        position: relative;
+     /* bottom: 490px; */
+    }
+
+    #mainbox {
+        width:800px;
+        height:620px;
+        background-color: aliceblue ;
+        padding: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+     /* bottom: 500px; */
+    }
+
+    #mainimg {
+        width: 430px; 
+    
+    }
+
+    #caption {
+        background-color: darkgrey;
+        height: 200px;
+        /* line-height: 12px; */
+        color: #2F4726;
+        font-size: 10pt;
+        /* padding-right: 20px;
+        padding-left: 20px; */
+        width: 20%; 
+        margin-top: 20px;
+        height: auto; 
+        /* font-weight: bold; */
+
+
+        
+    }
+    
+    @media screen and (max-width:640px){
+        #thumbimg {
+            flex-direction: row;
+            height: auto;
+            margin-bottom: 20px;
+            width: 500px;
+            margin-right: 0;
+            padding: 10px;
+        
+        }
+        .thumb{
+            width: 100px;
+            flex: 25%;
+            margin-left: 5px;
+             
+
+        }  
+        #mainimg{
+            width: 400px;
+        }
+        #caption {
+        width: 90%;
+        }
+        #mainbox{
+            padding: 10px;
+            width: 500px;
+        }
+        #sidecolumn{
+            flex-direction: column;
+
+        }
+    
+
+    }
+
+    #headerimage{
+        text-align: center;
+       position: relative;
+        bottom: 80px; 
+    }
+    #description{
+        /* height: 100px; */
+        border-radius: 20px;
+        /* background-color: #D0F1FF; */
+        color: black; 
+        font-size: 15pt;
+        position: relative;
+        top: 70px;
+        padding-left: 50px;
+        padding-right: 50px;
+        text-align: center;
+        position: relative;
+        right: 100px; 
+    }
+
+    
+    #artcontainer{
+        text-align: center;
+
+        
     }
     #words{
         text-align: center;
-        margin: 50px; 
-        font-size:xx-small; 
+     
     }
+    
+
    
 
     
@@ -109,12 +169,33 @@ p {
 
 <script src="jquery-3.6.1.mincopy.js"></script>
 <script src="distcopy/js/lightbox.js"></script>
+<script src = "jquery-3.6.1.min.js"></script>
+
+<script>
+    
+    jQuery(document).ready(function(){
+        $(".thumb").css("opacity", "0.5");
+    });
+
+</script>
 
     </head>
 
 
 
     <body>
+    
+        <div class="navbar">
+            <ul>
+               
+                <img src="Apple-Logo.png" style="width:5%; margin-top:0.1%"> 
+                <li><a href="homepage.html"> Website Name </a></li>
+                <li><a href="about.html"> About </a></li>
+                <li><a href="html">Years </a></li>
+                <!-- <img id="iconbar" src="iconbar.png" style="width:10%">  -->
+                
+            </ul>
+        </div>
     
     <div id="title">
         <h1>SOCIAL MEDIA</h1>
@@ -126,9 +207,36 @@ p {
     </p>
 
 
+    <div id="artcontainer">
+        <div id="socialmediabig">
+          <img src=" " style=width:30%>
+        </div>
+     </div>
 
+  <div id="movement">
+      <div id = "sidecolumn">
+          <div id = "thumbimg">
+              <img src = "Six degrees.png" class = "thumb" id = "thumb1" alt = "six degrees, 1997"><br>
+              <img src = "Friendster.png" class = "thumb" id = "thumb2" alt = "friendster, 2002"><br>
+              <img src = "Myspace.png" class = "thumb" id = "thumb3" alt = "myspace, 2003 "><br>
+              <img src = "facebook.png" class = "thumb" id = "thumb4" alt = "facebook, 2004"><br>
+              <img src = "Twitter.png" class = "thumb" id = "thumb5" alt = "twitter, 2006"><br>
+              <img src = "insta.png" class = "thumb" id = "thumb6" alt = "instagram, 2010"><br>
+          
+          </div>
+
+          <div id = "mainbox">
+              <img src = "retrotech.jpg" id = "mainimg" alt = ""><br><br>
+              <div id = "caption"></div>
+          </div>
+      </div>
+  </div>
+
+    <div id="button">
+        <a target="_blank" href="http://webdev.iyaclasses.com/~choihyew/acad275/socialmediapt2.html"><img src="socialmediabutton.png" width="50%"></a>
+    </div>
     
-    <div class="wrapper">
+    <!-- <div class="wrapper">
         <div class="media">
         <div class="layer">
             <p>six degrees,1997</p>
@@ -165,29 +273,83 @@ p {
                       </div>
                     <img src="insta.png" alt="" />
                     </div>
-    </div>
+    </div> -->
 
 
-        <div class="gallery">
-    
-            <a class="background1" href= "socialmedia1.png">
-                <img src=  "socialmedia1.png">  </a>
-            <a class="background" href= "socialmedia2.png">
-                <img src="socialmedia2.png">      </a>
-            <a href="socialmedia3.png">   <img src=  "socialmedia3.png"></a>
-            <a href="socialmedia4.png"><img src="socialmedia4.png">   </a>
-        <a href="socialmedia5.png"><img src="socialmedia5.png">   </a>
-        <a href="socialmedia6.png"><img src="socialmedia6.png">   </a>
-        <!-- <a href=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200318142309/php7.png">
-            <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20200318143112/php8.png">
-        </a> -->
-    </div>
+       
 
 
     </div>
     </body>
+
+    <script>
+        $(".thumb").mouseover(function() {
+            $(this).css("opacity", "1");
+        });
+        $(".thumb").mouseout(function() {
+            $(this).css("opacity", "0.5");
+        });
+        $("#thumb1").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "sixdegreesbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb2").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "friendsterbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb3").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "myspacebig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb4").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "facebookbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb5").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "twitterbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb6").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "instabig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+    </script>
 
     
 </html>
