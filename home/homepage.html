@@ -1,0 +1,202 @@
+<html>
+    <title>
+
+    </title>
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="stylesheet" href="websitestylesheet.css">
+
+    <head>
+        <style>
+            #background{
+                width:100%;
+                height: 100%;
+            }
+            
+          
+            body{
+                background-image: url("macbackground.jpeg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                margin: 0px;
+                font-family: Inter;
+               
+         
+            }
+            #folders{
+                width: 20%;
+                display:flex;
+                flex-direction: column;
+                margin-top: 5%;
+                margin-left: 2%;
+                float:inline-start;
+           
+
+            }
+            .folder{
+                margin: 5px 10px 10px 5px;
+                width: 30%;
+              
+            
+            }
+            .folder:hover{
+                opacity: 0.5;
+            }
+            #iconbar{
+                float:right;
+         
+            }
+            #popup{
+                margin-right: 50%;
+         
+                
+            }
+            #stickynote{
+                background-color: #FCF4A7;
+                width: 20%;
+            
+                height: fit-content;
+                box-shadow: 0 3px 10px rgb(0 0 0 / 0.5);
+                position: absolute;
+                top: 40%;
+                left: 40%;
+
+                
+                
+                
+                
+
+
+            }
+            #stickynoteheader{
+                background-color: #FBEB61;
+                width:100%;
+                height: 10px;
+                
+             
+            }
+            #stickynotecontent{
+                font-size: 12px;
+                padding: 10px 10px 10px 10px;
+                margin-bottom: 12%;
+               
+
+            }
+
+            @media screen and (max-width: 640px ){
+                #folder{
+                    width: 50%;
+                    height: auto;
+                }
+                .folder{
+                    width: 60%;
+                    height: auto;
+                }
+                #stickynote{
+                    column-count:1;
+                    width: 50%;
+                }
+                
+                
+            }
+
+            
+            
+            
+        </style>
+
+
+    <script src="jquery-3.6.1.min.js"></script>
+   
+    </head>
+    <body>
+        <!-- <div class="navbar">
+            <ul>
+                <li><a href="homepage.html"> TimeCapsule </a></li>
+                <li><a href="about.html"> About </a></li>
+                <div class="dropdown"> 
+                    <div class="dropdownbutton"> Years </div>
+                <div class="dropdown-content">
+                    <li><a href="html">1990 </a></li>
+                    <li><a href="html">2007 </a></li>
+                    <li><a href="html">2014 </a></li>
+                    <li><a href="html">2022 </a></li>
+                </div>
+                    
+                </div>
+                
+                
+              
+                
+            </ul>
+        </div> -->
+
+        <div class="navbar">
+            <a href="#home"><strong>Website</strong></a>
+            <a href="#news">About</a>
+            <div class="dropdown">
+              <button class="dropbtn">Years
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">1990</a>
+                <a href="#">2007</a>
+                <a href="#">2014</a>
+                <a href="#">2022</a>
+              </div>
+            </div> 
+            <a id="time"> Time </a>
+          </div>
+
+        <div id="folders">
+            <img class="folder" id="1990" src="1990.png" >
+            <img class= "folder" id="2007" src="2007.png" >
+            <img class = "folder" id="2014" src="2014.png" >
+            <img class = "folder" id="2022" src="2022.png" >
+        </div>
+        <div id="stickynote">
+            <div id="stickynoteheader">
+
+            </div>
+            <div id="stickynotecontent">
+                Hi! *Website Name* aims to illustrate the evolution of technology and our relationship with it through a narrative approach. <br> <br>
+             
+                <em> Click into each repsective folder to learn about the significant events of that time period. <em>
+                
+
+            </div>
+            
+           
+
+        </div>
+      
+        <!-- <img id="popup" src="popup.png"  style="width:30%"> -->
+       
+        
+
+        
+
+    </body>
+    <script>
+         $("#1990").on("click", function(){
+            window.location.href = "dialup.html";
+         });
+         $("#2007").on("click", function(){
+            window.location.href = "2007.html";
+         });
+         $("#2014").on("click", function(){
+            window.location.href = "group_proj_content.html";
+         });
+         $("#2022").on("click", function(){
+            window.location.href = "eddy_page.html";
+         });
+         
+        
+         const options = {weekday: 'long', year: 'numeric', month: 'short', day:'numeric'};
+         var now = new Date();
+         document.getElementById("time").innerHTML = now.toLocaleDateString('en-us', options);
+         
+
+        
+
+    </script>
+</html>
