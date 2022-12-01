@@ -1,0 +1,276 @@
+<html>
+    <head>
+        <title>
+            Dial-Up
+        </title>
+        <link rel="stylesheet" href="websitestylesheet.css">
+        <script src="jquery-3.6.1.min.js"></script>
+        <script>
+            
+            $(document).ready(function(){
+                $("hr").hide();
+                $("#status").hide();
+                $("#nextpage").hide();
+                $("#cancelbutton").hide();
+                $("#loginbutton").hide();
+
+                $("#connectbutton").on("click", function(){
+                    connect();
+                    $("#dialupsound").play();
+              
+                
+                })
+
+
+            });
+        </script>
+       
+        <style>
+
+            body{
+                background-color: #F4F4F4;
+                margin:0px;
+             
+            }
+            #stickfigures{
+                justify-content: center;
+                display:flex;
+                margin-bottom: 10%;
+            
+            }
+            img{
+                width: 20%;
+               
+            }
+            #connectbutton{
+                margin-left: 40%;
+                margin-top: 5%;
+                margin-bottom: 5%;
+             
+           
+               
+            }
+            #cancelbutton{
+                margin-left: 40%;
+                margin-top: 5%;
+                margin-bottom: 5%;
+             
+           
+               
+            }
+            #loginbutton{
+                margin-left: 40%;
+                margin-top: 5%;
+                margin-bottom: 5%;
+             
+           
+               
+            }
+            #logo{
+                margin-left: 38%;
+                margin-bottom: 5%;
+             
+            }
+            hr{
+                width: 80%;
+                height: 5px;
+                background-color: black;
+                border-radius: 10%;
+            
+              
+               
+            }
+            #AOLBar{
+                width: 100%;
+            }
+            #dialing{
+                margin-left: 40%;
+                width: 10%;
+            }
+            #outercontainer{
+                width: 70%;
+                background-color: #DFDDD2;
+                border-style: outset;
+                border-width: 5px;
+                margin-right: auto;
+                margin-left: auto;
+                margin-top: 5%;
+                
+               
+          
+            }
+            body{
+                background-color: #6B7074;
+            }
+            #text{
+                color: white;
+                margin-bottom: 2%;
+            }
+            #connectbutton:hover{
+                opacity:0.8;
+            }
+            #cancelbutton:hover{
+                opacity:0.8;
+            }
+            #loginbutton:hover{
+                opacity:0.8;
+            }
+           
+           
+            
+
+           
+        </style>
+        
+    </head>
+    <body>
+      
+    
+        <div class="navbar">
+            <a href="#home"><strong>Website</strong></a>
+            <a href="#news">About</a>
+            <div class="dropdown">
+              <button class="dropbtn">Years
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">1990</a>
+                <a href="#">2007</a>
+                <a href="#">2014</a>
+                <a href="#">2022</a>
+              </div>
+            </div> 
+            <a id="time"> Time </a>
+          </div>
+
+        <audio id="dialupsound" src="dialupsound.mp3"> </audio>
+        <audio autoplay id="gotmail" src="youve-got-mail-sound.mp3" type="audio/mpeg" > </audio>
+        
+
+        <div id="outercontainer">
+            <div id="content">
+           
+                <img id= logo src="AOL.png" style="margin-left:40%;margin-top:2%"> 
+    
+     
+          
+                <div id="stickfigures">
+                    <img id="firstbox"src="blankstate.png"> 
+                    <img id="secondbox"src="blankstate.png"> 
+                    <img id="thirdbox"src="blankstate.png"> 
+        
+        
+                </div>
+    
+                <div id="status">
+                    <img id= "dialing" src="Dialing...update.png"> 
+    
+                </div>
+                
+    
+                <hr>
+              
+                
+                <img id ="connectbutton" src="connect.png">
+                <img id ="cancelbutton" src="cancelbutton.png">
+                <img id ="loginbutton" src="loginbutton.png">
+                <h3 id="nextpage"> next page </h3>
+
+    
+            </div>
+
+        </div>
+        
+       
+
+    </body>
+    <script>
+         // when connect is pressed, start the animation
+         // connect button changes to "cancel"
+        // progress bar shows up
+        // the stick figure images slowly start to pop up
+        // at the end of the animation, connected! text replaces "dialing" and button goes a
+     
+       
+        function connect(){
+        
+              
+                 $("hr").show();
+                $("#status").show();
+                $("#cancelbutton").show();
+                $("#connectbutton").hide();
+
+                
+                
+               
+                var audio = document.getElementById("dialupsound");
+                audio.play();
+                //$("#connectbutton").attr("src", "cancelbutton.png");
+                
+               
+                
+                $("#firstbox").animate({ "backgroundColor": "green"},5000, showStatus1);
+                $("#secondbox").animate({ "backgroundColor": "green"},11000, showStatus2);
+                $("#thirdbox").animate({ "backgroundColor": "green"},25000, showStatus3);
+                $("#status").animate({ "backgroundColor": "green"},25000, showStatus4);
+                $("#nextpage").animate({ "backgroundColor": "green"},25000, login);
+              
+               
+               
+                
+                
+            }
+
+            function showStatus1(){
+                $("#firstbox").attr("src", "stickfigure1.png");
+
+            }
+            function showStatus2(){
+                $("#secondbox").attr("src", "stickfigure2.png");
+
+            }
+            function showStatus3(){
+                $("#thirdbox").attr("src", "stickfigure3.png");
+
+            }
+            function showStatus4(){
+                $("#dialing").attr("src", "Connected!update.png");
+
+            }
+            function login(){
+                $("#cancelbutton").hide();
+                $("#loginbutton").show();
+               
+
+                $("#loginbutton").on("click", function(){
+                var gotmail = document.getElementById("gotmail");
+                gotmail.play();
+                setTimeout(function(){
+                    window.location.href = "aolhomepage.html";
+
+                }, 2000);
+           
+
+
+
+        });
+
+            }
+            const options = {weekday: 'long', year: 'numeric', month: 'short', day:'numeric'};
+         var now = new Date();
+         document.getElementById("time").innerHTML = now.toLocaleDateString('en-us', options);
+         
+         var isCancelled = false;
+         $("#cancelbutton").on("click", function(){
+            isCancelled = true;
+            if (isCancelled){
+                location.reload();
+
+            }
+            
+         })
+
+          
+    </script>
+
+</html>

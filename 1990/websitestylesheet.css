@@ -1,0 +1,150 @@
+/* .navbar{
+                
+    font-size: 16px;
+    font-family:Inter;
+    padding-bottom: 0.1%;
+    background-color: rgba(255,255,255,0.5);
+    height: 4%;
+
+    
+
+}
+li{
+    display:inline;
+    margin:10px 10px;
+}
+li a{
+    
+    color: #000;
+    padding: 5px 5px;
+    margin: 10px 10px;
+    text-decoration: none;
+}
+li a:hover{
+    color: white;
+}
+
+.dropdown{
+    margin-left: 30%;
+    overflow:hidden;
+ 
+}
+
+.dropdown .dropdownbutton{
+    border:none;
+    outline: none;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color:  rgba(255,255,255,0.5);
+    background-color:rgba(255,255,255,0.5);
+    border-radius: 3%;
+    
+    
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: black;
+    padding: 3px 3px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    border-radius:5%;
+  }
+  
+  .dropdown-content a:hover {
+
+    background-color: #5380E0;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  } */
+
+
+.navbar {
+  overflow: hidden;
+  background-color: rgba(255,255,255,0.5);
+  font-family:Inter;
+ 
+
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0.2);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius:3%;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 5px 5px;
+  margin: 5px 5px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  border-radius:5%;
+}
+
+.dropdown-content a:hover {
+  background-color: #5380E0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+#time{
+  float: right;
+  
+}
+#time:hover{
+  background-color: rgba(255,255,255,0);
+}
+  @font-face{
+    font-family: Inter;
+    src:url("Inter\ \(1\)/Inter-VariableFont_slnt,wght.ttf")
+  }
+
+  
