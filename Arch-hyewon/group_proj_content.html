@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <title>Social media page</title>
+
+    
+        <link rel="stylesheet" href="socialmedia.css">
+
+<script src="jquery-3.6.1.mincopy.js"></script>
+<script src="distcopy/js/lightbox.js"></script>
+<script src = "jquery-3.6.1.min.js"></script>
+
+<script>
+    
+    jQuery(document).ready(function(){
+        $(".thumb").css("opacity", "0.5");
+    });
+
+</script>
+
+    </head>
+
+
+
+    <body>
+    
+    </style>
+    <script src="jquery-3.6.1.min.js"></script>
+    <link rel="stylesheet" href="websitestylesheet.css">
+</head>
+  <body>
+      <div class="navbar">
+          <a href="#home"><strong>Website</strong></a>
+          <a href="http://webdev.iyaclasses.com/~choihyew/acad275/aboutmegroup.html  ">About</a>
+          <div class="dropdown">
+            <button class="dropbtn">Years
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+              <a href="#">1990</a>
+              <a href="#">2007</a>
+              <a href="#">2014</a>
+              <a href="#">2022</a>
+            </div>
+          </div> 
+          <a id="time"> Time </a>
+        </div>
+    
+    <div id="title">
+        <h1>SOCIAL MEDIA</h1>
+    </div>
+
+    <div >
+        <p id="words">social media presense has changed and revolutionized over the years. this page expresses art to depict the changes
+            and transformations from 1997 to 2010 while revealing social media harms. what are the cracks and downfalls of social media and technological advancements? 
+    </p>
+
+
+    <div id="artcontainer">
+        <div id="socialmediabig">
+          <img src=" " style=width:30%>
+        </div>
+     </div>
+
+  <div id="movement">
+      <div id = "sidecolumn">
+          <div id = "thumbimg">
+              <img src = "Six degrees.png" class = "thumb" id = "thumb1" alt = "six degrees, 1997"><br>
+              <img src = "Friendster.png" class = "thumb" id = "thumb2" alt = "friendster, 2002"><br>
+              <img src = "Myspace.png" class = "thumb" id = "thumb3" alt = "myspace, 2003 "><br>
+              <img src = "facebook.png" class = "thumb" id = "thumb4" alt = "facebook, 2004"><br>
+              <img src = "Twitter.png" class = "thumb" id = "thumb5" alt = "twitter, 2006"><br>
+              <img src = "insta.png" class = "thumb" id = "thumb6" alt = "instagram, 2010"><br>
+          
+          </div>
+
+          <div id = "mainbox">
+              <img src = "retrotech.jpg" id = "mainimg" alt = ""><br><br>
+              <div id = "caption"></div>
+          </div>
+      </div>
+  </div>
+
+    <div id="button">
+        <a target="_blank" href="http://webdev.iyaclasses.com/~choihyew/acad275/socialmediapt2.html"><img src="socialmediabutton.png" width="50%"></a>
+    </div>
+    
+    <!-- <div class="wrapper">
+        <div class="media">
+        <div class="layer">
+            <p>six degrees,1997</p>
+          </div>
+        <img src="Six degrees.png" alt="" />
+        </div>
+         <div class="media">
+        <div class="layer">
+            <p>friendster,2002</p>
+          </div>
+        <img src="Friendster.png" alt="" />
+        </div>
+           <div class="media">
+        <div class="layer">
+            <p>myspace,2003</p>
+          </div>
+        <img src="Myspace.png" alt="" />
+        </div>
+        <div class="media">
+            <div class="layer">
+                <p>facebook,2004</p>
+              </div>
+            <img src="facebook.png" alt="" />
+            </div>
+            <div class="media">
+                <div class="layer">
+                    <p>twitter,2006</p>
+                  </div>
+                <img src="Twitter.png" alt="" />
+                </div>
+                <div class="media">
+                    <div class="layer">
+                        <p>instagram,2010</p>
+                      </div>
+                    <img src="insta.png" alt="" />
+                    </div>
+    </div> -->
+
+
+       
+
+
+    </div>
+    </body>
+
+    <script>
+        $(".thumb").mouseover(function() {
+            $(this).css("opacity", "1");
+        });
+        $(".thumb").mouseout(function() {
+            $(this).css("opacity", "0.5");
+        });
+        $("#thumb1").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "sixdegreesbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb2").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "friendsterbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb3").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "myspacebig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb4").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "facebookbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb5").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "twitterbig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+        $("#thumb6").click(function() {
+            $("#mainimg").hide();
+            $("#caption").hide();
+            $("#mainimg").attr("src", "instabig.jpg");
+            $("#mainimg").fadeIn(500);
+            document.querySelector("#caption").innerHTML = this.getAttribute("alt");
+            $("#caption").fadeIn(500);
+            $(".thumb").css("border-width", "0px");
+            $(this).css("border", "2px solid white");
+        });
+    </script>
+
+<script>
+    $("#1990").on("click", function(){
+       window.location.href = "dialup.html";
+    });
+    $("#2007").on("click", function(){
+       window.location.href = "2007.html";
+    });
+    $("#2014").on("click", function(){
+       window.location.href = "group_proj_content.html";
+    });
+    $("#2022").on("click", function(){
+       window.location.href = "eddy_page.html";
+    });
+    
+   
+    const options = {weekday: 'long', year: 'numeric', month: 'short', day:'numeric'};
+    var now = new Date();
+    document.getElementById("time").innerHTML = now.toLocaleDateString('en-us', options);
+    console.log(now);
+
+   
+
+</script>
+
+    
+</html>
