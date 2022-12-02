@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>
+      Moments in Technology
+    </title>
+
+    <link rel="stylesheet" href="groupaboutme.css">
+
+      <script src="jquery-3.6.1.min.js"></script>
+      <link rel="stylesheet" href="websitestylesheet.css">
+  </head>
+    <body>
+        <div class="navbar">
+            <a href="#home"><strong>Website</strong></a>
+            <a href="http://webdev.iyaclasses.com/~choihyew/acad275/aboutmegroup.html  ">About</a>
+            <div class="dropdown">
+              <button class="dropbtn">Years
+                <i class="fa fa-caret-down"></i>
+              </button>
+              <div class="dropdown-content">
+                <a href="#">1990</a>
+                <a href="#">2007</a>
+                <a href="#">2014</a>
+                <a href="#">2022</a>
+              </div>
+            </div> 
+            <a id="time"> Time </a>
+          </div>
+
+       
+    <div id="header">
+      <h1>  ARCH (ARt + teCHnology) </h1>
+    </div>
+      <!-- please feel free to edit (placeholder) -->
+      <div id="description">
+      <h3> Brief Description: </h3>
+      Arch comes from the words art and technology. The website aims to guide the user through our relationship with technology over the years using a creative approach.
+      Our different pages develop a narrative of how technology has evolved and has made an impact and legacy on our society. From the evolution or start of the internet, to the introduction of phones, rise of social media, amd finally to present times of NFTS and modern technology. 
+      The long history and standing of technology is a testiment that art and technology can go hand in hand. 
+      
+      <h1> Meet the Arch Team </h1>
+    </div>
+      
+      <div id="container">
+
+            <div class="row">
+                <div class="column">
+                        <img src="emilyaboutme.png" style="width:250px">
+                  
+                    <h5>01</h5>
+                    <div id="cup1caption">
+
+                    </div>
+                </div>
+                <div class="column">
+                
+                    <img src="aboutmeletters.png" style="width: 250px">
+              
+                    <h5>02</h5>
+
+                </div>
+                <div class="column">
+                    
+                    <img src="Seylaaboutme.png" style="width:250px">
+             
+                    <h5>03</h5>
+                </div>
+            </div>
+            <div class="row2">
+                <div class="column2">
+                 
+                    <img src="hyewonaboutme.png" style="width:250px">
+             
+                    <h5>04</h5>
+                </div>
+                <div class="column2">
+                    
+                    <img src="aboutmeletters.png" style="width:250px">
+        
+                    <h5>05</h5>
+                </div>
+                <div class="column2">
+                   
+                    <img src="Edwardaboutme.png" style="width:250px">
+     
+                    <h5>06</h5>
+                </div>
+            </div>
+
+
+      
+      
+    
+       
+    </body>
+    <script>
+        $("#1990").on("click", function(){
+           window.location.href = "dialup.html";
+        });
+        $("#2007").on("click", function(){
+           window.location.href = "2007.html";
+        });
+        $("#2014").on("click", function(){
+           window.location.href = "group_proj_content.html";
+        });
+        $("#2022").on("click", function(){
+           window.location.href = "eddy_page.html";
+        });
+        
+       
+        const options = {weekday: 'long', year: 'numeric', month: 'short', day:'numeric'};
+        var now = new Date();
+        document.getElementById("time").innerHTML = now.toLocaleDateString('en-us', options);
+        console.log(now);
+
+       
+
+   </script>
+</html>
