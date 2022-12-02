@@ -1,0 +1,219 @@
+
+<html>
+    <head>
+        <title>2007- Seyla Dillon</title>
+        <script src="jquery-3.6.1.mincopy.js"></script>
+        <script src="distcopy/js/lightbox.js"></script>
+        <link rel="stylesheet" href="websitestylesheet.css">
+        <style>
+             @font-face{
+        font-family:"NeonTech";
+        src:url('NeonTech.ttf');
+             }
+             @font-face{
+        font-family:"Digital7";
+        src:url('Digital-7.ttf');
+             }
+
+             body{
+        text-align: center;
+        background-image:url(wallpaper2.png);
+        background-repeat:no-repeat;
+        background-size: 150%;
+        font-family:'NeonTech';
+    }
+     
+    h2 {
+        color: green;
+    }
+     
+    .button {
+        align-items: center;
+align-content:center;
+position:relative;
+
+                
+                
+            }
+            .button:hover{
+                transform:scale(1.5);
+            }
+
+     
+    .gallery img {
+        width: 350px;
+        height: 300px;
+        transition: 1s;
+        padding: 5px;
+    }
+     
+    .gallery img:hover {
+        filter: drop-shadow(4px 4px 6px gray);
+        transform: scale(1.1);
+    }
+    
+    #title{
+        font-family:'NeonTech';
+        padding: 10px; 
+        background-color: white;
+        font-size: 30px;
+    }
+    #frutigercollage{
+        padding:10px;
+        width:10%;
+        height:10%;
+        margin-left: 25%;
+    }
+    #picker{
+        width: 500px;
+        height: 600px;
+        background-color:#c0ffad;
+        border: solid;
+        border-radius: 20px;
+        margin: 20px;
+        float: left;
+        text-align:center;
+
+    }
+    .colors{
+        column-count: 2;
+        text-align: left;
+        margin-left: 100px;
+    }
+    #right{
+        width: 600px;
+        height: 130%;
+        background-color:rgb(251, 209, 226);
+        border-top: 25px;
+        border-bottom: 30px;
+        border-radius: 20px;
+        margin: 20px;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 30px;
+        float: right;
+        text-align: center;
+        margin-left:25px;
+        margin-right:25px;
+
+    }
+    #homebutton{
+
+    }
+    #maintext{
+        text-align: center;
+
+    }
+    #titlelogo{
+align-items: center;
+align-content:center;
+position:relative;
+    }
+    #titlelogo:hover{
+        filter: drop-shadow(4px 4px 6px rgb(62, 62, 62));
+        transform: scale(1.1)
+    }
+ #maincontents{
+    
+        font-family:'NeonTech';
+        font-size:25px;
+        margin-right: auto;
+        margin-left: auto;
+        align-items:center;
+        align-content:center;
+ }
+ #randomwords{
+    background-color:rgb(0, 0, 0);
+    color:greenyellow;
+    font-family:'Digital7';
+    
+ }
+ #Puppies{
+    float:left;
+    
+ }
+ #wii{
+    float:right;
+ }
+        </style>
+
+<script src="jquery.min.js"></script> 
+<script src="distcopy/js/lightbox.js"></script>
+<link rel="stylesheet" href="websitestylesheet.css">
+
+    </head>
+
+
+
+    <body>
+        <div class="navbar">
+            <ul>
+               
+                <img src="Apple-Logo.png" style="width:5%; margin-top:0.1%"> 
+                <li><a href="homepage.html"> Website Name </a></li>
+                <li><a href="about.html"> About </a></li>
+                <li><a href="html">Years </a></li>
+               <img id="iconbar" src="iconbar.png" style="width:10%"> 
+                
+            </ul>
+        </div>
+    <div id="title">
+        <h1><img id="titlelogo" src="2007.png"></h1>
+    </div>
+    <div id="maincontents">
+        <div class="button">
+    
+          
+            <a href="frutigeraeropage2007.html">   <img src=  "newbutton.png">
+            </a>
+   
+
+    </div>
+    <audio controls="1" autoplay="1" loop="1">
+        <source type="audio/mpeg" src="frutiger aero playlist.webm">
+   </audio> 
+   <br>
+   <br>
+   <br>
+        <img id="Puppies"src="puppies.png">
+        <br>
+        <div id="randomwords">
+_ _ the use of this aesthetic exceded personal devices. 
+It created a physical enactment of the time.
+Through video games, and even toys_ _
+       
+        </div>
+        <br>
+        <img id="Wii"src="wii.png">
+    <div id="randomwords">
+
+       
+    </div>
+    
+</div>
+
+    </body>
+    <script>
+	$("#maincontents").hide();
+	$("#titlelogo").on("click", function(){
+        $("#maincontents").fadeToggle(800);
+    });
+	$("#titlelogo").on("mouseover",function(){
+		$(this).addClass("newclass");
+	});
+    </script>
+    <script>
+        if(localStorage.getItem("imageUrl")) {
+         var imageUrl = localStorage.getItem("imageUrl");
+         $("body").css("background-image", "url(" + imageUrl + ")","size","100%");
+                
+           
+
+}
+
+
+    </script>
+
+    
+</html>

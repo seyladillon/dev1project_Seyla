@@ -1,0 +1,245 @@
+
+<html>
+    <head>
+        <title>2007- Seyla Dillon</title>
+        <script src="jquery-3.6.1.min.js"></script> 
+        <script src="distcopy/js/lightbox.js"></script>
+        <link rel="stylesheet" href="websitestylesheet.css">
+        <style>
+             @font-face{
+        font-family:"NeonTech";
+        src:url('NeonTech.ttf');
+             }
+             @font-face{
+        font-family:"Digital7";
+        src:url('Digital-7.ttf');
+             }
+
+             body{
+        text-align: center;
+        background-image:url(wallpaper2.png);
+        background-repeat:no-repeat;
+        background-size:150%;
+     
+        font-family:'NeonTech';
+    }
+     
+    h2 {
+        color: green;
+    }
+     
+    .button {
+        align-items: center;
+align-content:center;
+position:relative;
+
+                
+                
+            }
+            .button:hover{
+                transform:scale(1.5);
+            }
+
+     
+    .gallery img {
+        width: 350px;
+        height: 300px;
+        transition: 1s;
+        padding: 5px;
+    }
+     
+    .gallery img:hover {
+        filter: drop-shadow(4px 4px 6px gray);
+        transform: scale(1.1);
+    }
+    
+    #title{
+        font-family:'NeonTech';
+        padding: 10px; 
+        background-color: white;
+        font-size: 30px;
+    }
+    #frutigercollage{
+        padding:10px;
+        width:10%;
+        height:10%;
+        margin-left: 25%;
+    }
+    #picker{
+        width: 500px;
+        height: 600px;
+        background-color:#c0ffad;
+        border: solid;
+        border-radius: 20px;
+        margin: 20px;
+        float: left;
+        text-align:center;
+
+    }
+    .colors{
+        column-count: 2;
+        text-align: left;
+        margin-left: 100px;
+    }
+    #right{
+        width: 600px;
+        height: 130%;
+        background-color:rgb(251, 209, 226);
+        border-top: 25px;
+        border-bottom: 30px;
+        border-radius: 20px;
+        margin: 20px;
+        padding-left: 30px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        padding-right: 30px;
+        float: right;
+        text-align: center;
+        margin-left:25px;
+        margin-right:25px;
+
+    }
+    #homebutton{
+
+    }
+    #maintext{
+        text-align: center;
+
+    }
+    #titlelogo{
+align-items: center;
+align-content:center;
+position:relative;
+    }
+    #titlelogo:hover{
+        filter: drop-shadow(4px 4px 6px rgb(62, 62, 62));
+        transform: scale(1.1)
+    }
+ #maincontents{
+    
+        font-family:'NeonTech';
+        font-size:25px;
+        margin-right: auto;
+        margin-left: auto;
+        align-items:center;
+        align-content:center;
+ }
+ #randomwords{
+    background-color:rgb(0, 0, 0);
+    color:greenyellow;
+    font-family:'Digital7';
+ }
+ #zoomingfield{
+
+ }
+ #CitySpace{
+
+ }
+ #BlackLights{
+
+ }
+        </style>
+
+
+
+    </head>
+
+
+
+    <body>
+        <div class="navbar">
+            <ul>
+               
+                <img src="Apple-Logo.png" style="width:5%; margin-top:0.1%"> 
+                <li><a href="homepage.html"> Website Name </a></li>
+                <li><a href="about.html"> About </a></li>
+                <li><a href="html">Years </a></li>
+               <img id="iconbar" src="iconbar.png" style="width:10%"> 
+                
+            </ul>
+        </div>
+    <div id="title">
+        <div id="backgroundselector">
+            <input type="button" id="ZoomingField" value="Zooming Field">
+            <input type="button" id="GreenBlue" value="GreenBlue">
+            <input type="button" id="BlackLights" value="Black/Lights">
+        </div>
+        <h1><img id="titlelogo" src="2007.png"></h1>
+    </div>
+    <div id="maincontents">
+        <div class="button">
+    
+          
+            <a href="frutigeraeropage2007(part 2).html">   <img src=  "newbutton.png">
+            </a>
+   
+
+    </div>
+    <audio controls="1" autoplay="1" loop="1">
+        <source type="audio/mpeg" src="frutiger aero playlist.webm">
+   </audio> 
+   <br>
+   <br>
+   <br>
+        <img id=" Frutigercollage"src="yay.png">
+        <br>
+        <br>
+    <div id="randomwords">
+
+        _ _ The idea of technology and advancement was highly popular in 2007, with the evolution of the Frutiger Aero aesthetic_ _
+        <p>
+        <br>_ _ Technology began to look very clunky and abnoxious</p>
+        <br> ,it is evoking the idea of space. 
+        <br> ,what is the space of tech?
+        <br> ,2007 defined this. 
+        <br> ,all of the green blue's.   
+        <br> ,they evoke nature within these digital spaces_ _
+    </div>
+    
+</div>
+
+    </body>
+    <script>
+	$("#maincontents").hide();
+	$("#titlelogo").on("click", function(){
+        $("#maincontents").fadeToggle(800);
+    });
+	$("#titlelogo").on("mouseover",function(){
+		$(this).addClass("newclass");
+	});
+    
+ $("#ZoomingField").on("click",function(){
+           
+    var imageUrl = 
+"wallpaper2.png";
+                $("body").css("background-image", "url(" + imageUrl + ")","size","100%");
+                localStorage.setItem("imageUrl", imageUrl);
+            });
+
+ $("#GreenBlue").on("click",function(){
+    var imageUrl = 
+"greenblue.jpg.png";
+                $("body").css("background-image", "url(" + imageUrl + ")","size","100%");
+                localStorage.setItem("imageUrl", imageUrl);
+            });
+        
+
+ $("#BlackLights").on("click",function(){
+           
+    var imageUrl = 
+"streaks2.png";
+                $("body").css("background-image", "url(" + imageUrl + ")","size","100%");
+                localStorage.setItem("imageUrl", imageUrl);
+
+            });
+
+
+
+
+    </script>
+    <script>
+
+    </script>
+
+    
+</html>
