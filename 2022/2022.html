@@ -1,0 +1,371 @@
+<html><head>
+
+    <title> WEB 3.0 </title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <!-- Importing Open Sans, an open source Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../Style.css">
+    <link rel="stylesheet" href="websitestylesheet.css">
+    <script src="jquery-3.6.1.min.js"></script>
+    <style>
+        
+        #heroimage {
+            background-image: url("Background Image 1.png");
+            height: 520px;
+            padding: 150px 50px 0px 50px;
+        
+            color:black;
+        }
+
+        #nft1 {
+            width: 60%;
+            height: 100%;
+            background-image: url(not_scam.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            float: right;
+        }
+
+        #whitesection1 {
+            margin: 80px 20% 80px 20%;
+            text-align: center;
+        }
+
+        #whitesection2 {
+            margin: 80px 20% 80px 20%;
+            text-align: center;
+        }
+
+        #circle {
+            margin: auto;
+            margin-bottom: 30px;
+            width: 12px;
+            height: 12px;
+            background-color: #000000;
+            border-radius: 50%;
+        }
+
+        #featureoverview {
+            background-image: url("Background Image 1.png");
+            height: 420px;
+            padding: 100px 50px 100px 50px;
+            color:black;
+        }
+
+        #featureoverview .third {
+            margin-right: 8%;
+        }
+
+        #nft2 {
+            width: 50%;
+            height: 100%;
+            background-image: url(crypto_scam.png);
+            background-size: 100%;
+            background-repeat: no-repeat;
+            float: left;
+        }
+
+        #feedbackbutton {
+            margin: auto;
+            margin-top: 30px;
+            padding: 3px 30px 3px 30px;
+
+            width: 130px;
+            border: 1px solid black;
+            border-radius: 50px;
+            text-align: center;
+            color: black;
+            opacity: 1;
+        }
+        body{
+            margin: 0px;
+             font-family: Inter;
+            
+         
+            }
+
+        @media only screen and (max-width: 1148px) {
+            h1 {
+                font-size: 20pt;
+                line-height: 1.1em;
+            }
+
+            p {
+                font-size: 10pt;
+            }
+
+            #heroimage .third {
+                width: 100%;
+                float: none;
+                text-align: center;
+            }
+
+            .button {
+                margin: auto;
+                margin-top: 20px;
+            }
+
+            #nft1 {
+                margin: 20px auto 20px auto;
+                width: 60%;
+                float: none;
+            }
+
+            #featureoverview .third {
+                margin: -80px auto 20px auto;
+                padding: 0px 10% 0px 10%;
+                width: 80%;
+                float: none;
+                text-align: center;
+            }
+
+            #nft2 {
+                margin: -10px auto 20px auto;
+                width: 55%;
+                height: 80%;
+                float: none;
+            }
+
+            #navFlex {
+                flex-flow: column wrap;
+                height: 150px;
+            }
+
+            #navFlex a {
+                width: 50%;
+            }
+        }
+
+        @media only screen and (max-width: 675px) {
+            #heroimage {
+                padding-top: 300px;
+                height: 450px;
+            }
+
+            #nft1 {
+                width: 80%;
+            }
+
+            #nft2 {
+                width: 80%
+            }
+
+            #featureoverview .third {
+                margin-top: -140px;
+            }
+
+            #navFlex {
+                flex-flow: column nowrap;
+                height: 300px;
+            }
+
+            #navFlex a {
+                width: 100%;
+            }
+        }
+
+        /*hamburger css start here*/
+        .header {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:black;
+            padding: 0.25px;
+            transition: 0.3s;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .hamburger {
+            position: absolute;
+            width: 30px;
+            height: 4px;
+            top: 50px;
+            right: 10%;
+            background: #fff;
+            border-radius: 10px;
+            cursor: pointer;
+            z-index: 4;
+            transition: 0.3s;
+        }
+
+        .hamburger::before,
+        .hamburger::after {
+            content: "";
+            position: absolute;
+            height: 4px;
+            right: 0;
+            background: #fff;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .hamburger::before {
+            top: -10px;
+            width: 45px;
+
+        }
+
+        .hamburger::after {
+            top: -10px;
+            width: 45px;
+
+        }
+
+        .togggle-menu {
+            position: absolute;
+            width: 50px;
+            height: 100%;
+            top: 30px;
+            right: 10%;
+            z-index: 5;
+            cursor: pointer;
+            opacity: 0;
+        }
+
+        .hamburger,
+        .togggle-menu {
+            display: none;
+        }
+
+        .navigation input:checked~.hamburger {
+            background: transparent;
+        }
+
+        .navigation input:checked~.hamburger:before {
+            top: 0;
+            transform: rotate(-45deg);
+            width: 30px;
+        }
+
+        .navigation input:checked~.hamburger:after {
+            top: 0;
+            transform: rotate(45deg);
+            width: 30px;
+        }
+
+        .navigation input:checked~.menu {
+            right: 0;
+
+        }
+
+        @media screen and (max-width:3600px) {
+
+            .hamburger,
+            .togggle-menu {
+                display: block;
+            }
+        }
+
+        /*hamburger css end here*/
+    </style>
+</head>
+
+<body>
+
+    <!--hamburger start here-->
+    <div class="navbar">
+        <a href="#home"><strong>Website</strong></a>
+        <a href="#news">About</a>
+        <div class="dropdown">
+          <button class="dropbtn">Years
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">1990</a>
+            <a href="#">2007</a>
+            <a href="#">2014</a>
+            <a href="#">2022</a>
+          </div>
+        </div> 
+        <a id="time"> Time </a>
+      </div>
+
+
+        <div class="navigation">
+
+
+            <input type="checkbox" class="togggle-menu">
+
+            <div class="hamburger"></div>
+           
+        </div>
+    </div>
+
+    <!--hamburger close here-->
+
+
+    <div id="animatedlogo">
+        <img src="web.gif" width="100%">
+    </div>
+    <div id="heroimage">
+        <div class="third" style="margin-left: 3%">
+            <h1>Crypto becoming the new currency?</h1>
+            <p>
+                Crypto is the new thing that is getting every investors attention. It's becoming the new way of gambling, online.
+            </p>
+        
+            </a>
+        </div>
+        <div id="nft1"></div>
+    </div>
+    <div id="whitesection1">
+        <div id="circle"></div>
+        <p>
+            You won't get rich in 6 months, but you may very well be much better off in 6 years.
+If this isn't a cycle and it's truly the end. Then we're worrying about the wrong things right now, since we'd have to entertain the thought of killing our neighbor for a can of beans to feed our family. And I don't think we're in that kind of decline.
+        </p>
+        <p>
+            Which means crypto is here to stay. Not for the tech, but for the possibility of people earning some $$$.
+        </p>
+    </div>
+    <div id="featureoverview">
+        <div id="nft2"></div>
+        <div class="third" style="float: right">
+            <h1>An All-In-One</h1>
+            <p>
+                The NFT market is riddled with scams. In September 2021, a fake Banksy NFT titled Great Redistribution of the Climate Change Disaster was sold for over USD 300,000. Interestingly, the fake work was advertised as an auction on Banksy’s website. Furthermore, scammers and hackers are trying to lure unsuspecting enthusiasts through social chat apps, like Discord, using fake links that appear like opportunities to mint NFTs. They read and appear almost like click-bait phishing mails that were common in the early days of email. Not just Discord, phishing attempts can be made via Twitter and Instagram DMs, too. The fate of cryptocurrency is ambiguous in several countries. In case most economies decide to ban them, it will impact the mining operations. This means there will be an adverse effect on NFTs since crypto is essential to the trade.
+
+                Some countries, such as China, allow NFT trading on semi-regulated blockchains. 
+            </p>
+            </a>
+        </div>
+    </div>
+    <div id="whitesection2">
+        <p>
+            Curious about maybe buying an NFT? Want to waste money? Press the buttom below to learn more!
+        </p>
+        <a>
+            <div id="feedbackbutton">
+                <p> Buy NFT!</p>
+            </div>
+        </a>
+    </div>
+    <div class="footer">
+        <div class="third" style="text-align: left">
+            <h4> Arch</h4>
+        </div>
+        <div class="third" style="text-align: right; float: right;">
+            <p>Copyright © 2022-2023 Arch. All rights reserved.</p>
+        </div>
+    </div>
+    <script>
+        const options = {weekday: 'long', year: 'numeric', month: 'short', day:'numeric'};
+         var now = new Date();
+         document.getElementById("time").innerHTML = now.toLocaleDateString('en-us', options);
+         
+
+    </script>
+
+</body></html>
